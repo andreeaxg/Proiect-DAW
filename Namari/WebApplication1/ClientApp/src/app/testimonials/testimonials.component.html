@@ -1,0 +1,39 @@
+<!--Testimonials-->
+<aside id="testimonials" class="scrollto text-center" data-enllax-ratio=".2">
+
+    <div class="row clearfix">
+
+        <div class="section-heading">
+            <h3>FEEDBACK</h3>
+            <h2 class="section-title">What our customers are saying</h2>
+        </div>
+
+        <blockquote class="col-3 testimonial classic" *ngFor="let review of reviews">
+            <img src="../assets/images/user-images/user-1.jpg" alt="User" />
+            <q>{{review.content}}</q>
+            <footer>{{review.name}} - {{review.date | date}}</footer>
+        </blockquote>
+
+    </div>
+
+    <div *ngIf="addReviewBool">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" [(ngModel)]="review.name" name="user" #user="ngModel" required>
+            <p class="error" *ngIf="nameNotValid">Please insert your name.</p>
+        </div>
+
+        <div class="form-group">
+            <label>Content</label>
+            <textarea class="form-control" rows="5" [(ngModel)]="review.content" name="content" #content="ngModel" required></textarea>
+            <p class="error" *ngIf="contentNotValid">Write your review here.</p>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="addReview()">Post</button>
+        </div>
+    </div>
+
+    <a class="button" (click)="trigger()">ADD REVIEW</a>
+</aside>
+<!--End of Testimonials-->

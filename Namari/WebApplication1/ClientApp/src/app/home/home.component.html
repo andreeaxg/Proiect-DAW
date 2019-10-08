@@ -1,0 +1,21 @@
+<header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+    <!--Banner Content-->
+    <div id="banner-content" class="row clearfix">
+
+        <div class="col-38">
+
+            <div class="section-heading">
+                <h1>NAMARI TATTOO SHOP</h1>
+                <h2>Namari is a professional tattoo shop with experienced, talented and friendly artists.Take a look to convince yourself.Enjoy!</h2>
+            </div>
+
+            <!--Call to Action-->
+            <a class="button" (click)="addMeeting()" *ngIf="!isLoggedIn">BOOK YOUR MEETING</a>
+            <a class="button" (click)="seeMeetings()" *ngIf="isLoggedIn">SEE YOUR MEETINGS</a>
+            <!--End Call to Action-->
+
+        </div>
+
+    </div>
+    <!--End of Row-->
+</header>
